@@ -58,12 +58,15 @@
     <Compile Include="CustomExceptions\FutureBirthdayException.cs" />
     <Compile Include="CustomExceptions\InvalidEmailException.cs" />
     <Compile Include="CustomExceptions\PastBirthdayException.cs" />
+    <Compile Include="CustomExceptions\WrongFirstNameException.cs" />
+    <Compile Include="CustomExceptions\WrongLastNameException.cs" />
     <Compile Include="InformationViewModel.cs" />
     <Compile Include="InformationWindow.xaml.cs">
       <DependentUpon>InformationWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="RelayCommand.cs" />
     <Compile Include="SignInViewModel.cs" />
+    <Compile Include="Validator.cs" />
     <Page Include="InformationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

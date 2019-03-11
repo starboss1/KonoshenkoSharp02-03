@@ -11,9 +11,13 @@ namespace KMA.ProgrammingInCSharp2019.KonoshenkoLab02
 
         public Person(string firstName, string lastName, string email, DateTime dateOfBirth)
         {
+            Validator.CheckFirstName(firstName);
             _firstName = firstName;
+            Validator.CheckLastName(lastName);
             _lastName = lastName;
+            Validator.CheckEmail(email);
             _email = email;
+            Validator.CheckBirthday(dateOfBirth);
             _dateOfBirth = dateOfBirth;
         }
 
@@ -43,13 +47,19 @@ namespace KMA.ProgrammingInCSharp2019.KonoshenkoLab02
         public string Email
         {
             get { return _email; }
-            set { _email = value; }
+            set
+            {
+                _email = value;
+            }
         }
 
         public DateTime DateOfBirth
         {
             get { return _dateOfBirth; }
-            set { _dateOfBirth = value; }
+            set
+            {
+                _dateOfBirth = value;
+            }
         }
 
 

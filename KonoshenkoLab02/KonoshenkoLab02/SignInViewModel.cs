@@ -61,21 +61,30 @@ namespace KMA.ProgrammingInCSharp2019.KonoshenkoLab02
 
         private async void SignIn(object o)
         {
-            if (!IsDateValid(_dateOfBirth))
-            {
-                MessageBox.Show($"Wrong date: {_dateOfBirth}");
-                return;
-            }
+            //if (!IsDateValid(_dateOfBirth))
+            //{
+            //    MessageBox.Show($"Wrong date: {_dateOfBirth}");
+            //    return;
+            //}
 
 
             Person person = null;
             await Task.Run((() =>
             {
-
-                person = new Person(_firstName, _lastName, _email, _dateOfBirth);
-                MessageBox.Show($"Please wait, {(person.IsBirthday ? "birthday boy(Vy staly na rik starishym =)(Za smailik sorri(opyat'))": "traveler")}");
+                try
+                {
+                    person = new Person(_firstName, _lastName, _email, _dateOfBirth);
+                    MessageBox.Show($"Please wait, {(person.IsBirthday ? "birthday boy(Vy staly na rik starishym =)(Za smailik sorri(opyat'))" : "traveler")}");
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+             
 
             }));
+            if (person == null)
+                return;
             InformationWindow personWindow = new InformationWindow(person);
 
             _parentWindow.Hide();
@@ -95,19 +104,19 @@ namespace KMA.ProgrammingInCSharp2019.KonoshenkoLab02
                            //o => true));
                            o => !String.IsNullOrWhiteSpace(_firstName) &&
                                 !String.IsNullOrWhiteSpace(_lastName) &&
-                                !String.IsNullOrWhiteSpace(_email) &&
-                IsDateValid(_dateOfBirth)));
+                                !String.IsNullOrWhiteSpace(_email) /*&&*/
+                /*IsDateValid(_dateOfBirth)*/));
             }
         }
 
 
-        private bool IsDateValid(DateTime date)
-        {
-            var today = DateTime.Today;
-            var diffDateTime = today - date;
-            var diffYears = (today.Year - date.Year) - (today.DayOfYear >= date.DayOfYear ? 0 : 1);
-            return diffDateTime.Days >= 0 && diffYears <= 135;
-        }
+        //private bool IsDateValid(DateTime date)
+        //{
+        //    var today = DateTime.Today;
+        //    var diffDateTime = today - date;
+        //    var diffYears = (today.Year - date.Year) - (today.DayOfYear >= date.DayOfYear ? 0 : 1);
+        //    return diffDateTime.Days >= 0 && diffYears <= 135;
+        //}
 
 
 
