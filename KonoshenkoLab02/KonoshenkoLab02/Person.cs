@@ -5,9 +5,9 @@ namespace KMA.ProgrammingInCSharp2019.KonoshenkoLab02
     public class Person
     {
         private string _firstName;
+        private DateTime _dateOfBirth;
         private string _lastName;
         private string _email;
-        private DateTime _dateOfBirth;
 
         public Person(string firstName, string lastName, string email, DateTime dateOfBirth)
         {
@@ -28,13 +28,38 @@ namespace KMA.ProgrammingInCSharp2019.KonoshenkoLab02
 
         }
 
+        public string FirstName
+        {
+            get { return _firstName; }
+            set { _firstName = value; }
+        }
+
+        public string LastName
+        {
+            get { return _lastName; }
+            set { _lastName = value; }
+        }
+
+        public string Email
+        {
+            get { return _email; }
+            set { _email = value; }
+        }
+
+        public DateTime DateOfBirth
+        {
+            get { return _dateOfBirth; }
+            set { _dateOfBirth = value; }
+        }
+
+
         public bool IsAdult
         {
             get
             {
                 DateTime today = DateTime.Today;
                 var a = (today.Year * 100 + today.Month) * 100 + today.Day;
-                var b = (_dateOfBirth.Year * 100 + _dateOfBirth.Month) * 100 + _dateOfBirth.Day;
+                var b = (DateOfBirth.Year * 100 + DateOfBirth.Month) * 100 + DateOfBirth.Day;
                 return (a - b) / 10000 >= 18;
             }
         }
@@ -43,9 +68,9 @@ namespace KMA.ProgrammingInCSharp2019.KonoshenkoLab02
         {
             get
             {
-                var day = _dateOfBirth.Day;
+                var day = DateOfBirth.Day;
                 int westZodiacNum;
-                switch (_dateOfBirth.Month)
+                switch (DateOfBirth.Month)
                 {
                     case 1: //Jan
                         westZodiacNum = day <= 20 ? 9 : 10;
@@ -92,9 +117,9 @@ namespace KMA.ProgrammingInCSharp2019.KonoshenkoLab02
             }
         }
 
-        public string ChineseSign => ChineseZodiaсList[(_dateOfBirth.Year - 5) % 12];
+        public string ChineseSign => ChineseZodiaсList[(DateOfBirth.Year + 8) % 12];
 
-        public bool IsBirthday => _dateOfBirth.DayOfYear == DateTime.Today.DayOfYear;
+        public bool IsBirthday => DateOfBirth.DayOfYear == DateTime.Today.DayOfYear;
 
 
         private static readonly string[] ChineseZodiaсList = {"Rat","Ox","Tiger","Rabbit",

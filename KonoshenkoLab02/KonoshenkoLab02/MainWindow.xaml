@@ -7,6 +7,42 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.Background>
+            <RadialGradientBrush GradientOrigin="0.5,0.5">
+                <GradientStop Color="Blue" Offset="0" />
+                <GradientStop Color="CornflowerBlue" Offset="1" />
+            </RadialGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0" Margin="30">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"></RowDefinition>
+                    <RowDefinition Height="7*"></RowDefinition>
+                    <RowDefinition Height="5*"></RowDefinition>
+                    <RowDefinition Height="7*"></RowDefinition>
+                    <RowDefinition Height="5*"></RowDefinition>
+                    <RowDefinition Height="7*"></RowDefinition>
+                    <RowDefinition Height="5*"></RowDefinition>
+                    <RowDefinition Height="7*"></RowDefinition>
+                    <RowDefinition Height="10*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0">First Name</Label>
+                <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <Label Grid.Row="2" Grid.Column="0">Last Name</Label>
+                <TextBox Grid.Row="3" Grid.Column="0" Text="{Binding LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <Label Grid.Row="4" Grid.Column="0">Email</Label>
+                <TextBox Grid.Row="5" Grid.Column="0" Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <Label Grid.Row="6" Grid.Column="0">Date of Birth</Label>
+                <DatePicker Grid.Row="7" Grid.Column="0" FirstDayOfWeek="Monday" SelectedDate="{Binding DateOfBirth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
+                <Button Grid.Row="8" Grid.Column="0" Command="{Binding RegisterCommand}">
+                    <TextBlock FontSize="30">
+                       <Bold>Proceed</Bold>
+                    </TextBlock>
+                </Button>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

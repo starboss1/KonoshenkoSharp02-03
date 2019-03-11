@@ -1,0 +1,17 @@
+D:\Projects\C#\lab02\KonoshenkoLab02\KonoshenkoLab02\bin\Debug\KonoshenkoLab02.exe.config
+D:\Projects\C#\lab02\KonoshenkoLab02\KonoshenkoLab02\bin\Debug\KonoshenkoLab02.exe
+D:\Projects\C#\lab02\KonoshenkoLab02\KonoshenkoLab02\bin\Debug\KonoshenkoLab02.pdb
+D:\Projects\C#\lab02\KonoshenkoLab02\KonoshenkoLab02\obj\Debug\KonoshenkoLab02.csprojAssemblyReference.cache
+D:\Projects\C#\lab02\KonoshenkoLab02\KonoshenkoLab02\obj\Debug\InformationWindow.g.cs
+D:\Projects\C#\lab02\KonoshenkoLab02\KonoshenkoLab02\obj\Debug\MainWindow.g.cs
+D:\Projects\C#\lab02\KonoshenkoLab02\KonoshenkoLab02\obj\Debug\App.g.cs
+D:\Projects\C#\lab02\KonoshenkoLab02\KonoshenkoLab02\obj\Debug\KonoshenkoLab02_MarkupCompile.cache
+D:\Projects\C#\lab02\KonoshenkoLab02\KonoshenkoLab02\obj\Debug\KonoshenkoLab02_MarkupCompile.lref
+D:\Projects\C#\lab02\KonoshenkoLab02\KonoshenkoLab02\obj\Debug\InformationWindow.baml
+D:\Projects\C#\lab02\KonoshenkoLab02\KonoshenkoLab02\obj\Debug\MainWindow.baml
+D:\Projects\C#\lab02\KonoshenkoLab02\KonoshenkoLab02\obj\Debug\KonoshenkoLab02.g.resources
+D:\Projects\C#\lab02\KonoshenkoLab02\KonoshenkoLab02\obj\Debug\KMA.ProgrammingInCSharp2019.KonoshenkoLab02.Properties.Resources.resources
+D:\Projects\C#\lab02\KonoshenkoLab02\KonoshenkoLab02\obj\Debug\KonoshenkoLab02.csproj.GenerateResource.cache
+D:\Projects\C#\lab02\KonoshenkoLab02\KonoshenkoLab02\obj\Debug\KonoshenkoLab02.csproj.CoreCompileInputs.cache
+D:\Projects\C#\lab02\KonoshenkoLab02\KonoshenkoLab02\obj\Debug\KonoshenkoLab02.exe
+D:\Projects\C#\lab02\KonoshenkoLab02\KonoshenkoLab02\obj\Debug\KonoshenkoLab02.pdb

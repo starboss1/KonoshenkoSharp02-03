@@ -10,6 +10,7 @@ namespace KMA.ProgrammingInCSharp2019.KonoshenkoLab02
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new SignInViewModel(this);
         }
     }
 }
