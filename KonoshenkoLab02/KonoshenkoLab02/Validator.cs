@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using KMA.ProgrammingInCSharp2019.KonoshenkoLab02.CustomExceptions;
-using KMA.ProgrammingInCSharp2019.KonoshenkoLab02.CustomExceptions.KMA.ProgrammingInCSharp2019.KonoshenkoLab02.CustomExceptions;
 
 namespace KMA.ProgrammingInCSharp2019.KonoshenkoLab02
 {
@@ -21,18 +17,12 @@ namespace KMA.ProgrammingInCSharp2019.KonoshenkoLab02
 
         public static void CheckEmail(string email)
         {
-            if (!CorrectEmail(email))
-                throw new InvalidEmailException("Wrong email");
-        }
-
-        public static bool CorrectEmail(string email)
-        {
             if (email.Length < 3 || email.Count(f => f == '@') != 1 ||
+                email.Count(f => f == '.') != 1 ||
+                (email.IndexOf(".", StringComparison.Ordinal) == email.Length - 1) ||
                 (email.IndexOf("@", StringComparison.Ordinal) == email.Length - 1) ||
                 (email.IndexOf("@", StringComparison.Ordinal) == 0))
-                return false;
-            return true;
-            
+                throw new InvalidEmailException("Wrong email");
         }
 
         public static void CheckFirstName(string firstName)

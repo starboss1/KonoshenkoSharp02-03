@@ -1,20 +1,43 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Threading;
+using System.Runtime.CompilerServices;  
 using System.Threading.Tasks;
 using System.Windows;
+using KMA.ProgrammingInCSharp2019.KonoshenkoLab02.Tools;
+using KMA.ProgrammingInCSharp2019.KonoshenkoLab02.Tools.Managers;
 
 
 namespace KMA.ProgrammingInCSharp2019.KonoshenkoLab02
 {
-    class SignInViewModel: INotifyPropertyChanged
+    class SignInViewModel: ILoaderOwner
     {
         private string _firstName;
         private string _lastName;
         private string _email;
         private DateTime _dateOfBirth = DateTime.Today;
         private RelayCommand _signInCommand;
+        private Visibility _loaderVisibility = Visibility.Hidden;
+        private bool _isControlEnabled = true;
+
+        public Visibility LoaderVisibility
+        {
+            get { return _loaderVisibility; }
+            set
+            {
+                _loaderVisibility = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool IsControlEnabled
+        {
+            get { return _isControlEnabled; }
+            set
+            {
+                _isControlEnabled = value;
+                OnPropertyChanged();
+            }
+        }
 
         private readonly Window _parentWindow;
 
@@ -61,13 +84,7 @@ namespace KMA.ProgrammingInCSharp2019.KonoshenkoLab02
 
         private async void SignIn(object o)
         {
-            //if (!IsDateValid(_dateOfBirth))
-            //{
-            //    MessageBox.Show($"Wrong date: {_dateOfBirth}");
-            //    return;
-            //}
-
-
+            LoaderManager.Instance.ShowLoader();
             Person person = null;
             await Task.Run((() =>
             {
@@ -79,6 +96,7 @@ namespace KMA.ProgrammingInCSharp2019.KonoshenkoLab02
                 catch (Exception e)
                 {
                     MessageBox.Show(e.Message);
+                    LoaderManager.Instance.HideLoader();
                 }
              
 
@@ -86,7 +104,7 @@ namespace KMA.ProgrammingInCSharp2019.KonoshenkoLab02
             if (person == null)
                 return;
             InformationWindow personWindow = new InformationWindow(person);
-
+            LoaderManager.Instance.HideLoader();
             _parentWindow.Hide();
             personWindow.Show();
         }
@@ -94,6 +112,7 @@ namespace KMA.ProgrammingInCSharp2019.KonoshenkoLab02
         internal SignInViewModel(Window parentWindow)
         {
             _parentWindow = parentWindow;
+            LoaderManager.Instance.Initialize(this);
         }
 
         public RelayCommand RegisterCommand
@@ -101,25 +120,11 @@ namespace KMA.ProgrammingInCSharp2019.KonoshenkoLab02
             get
             {
                 return _signInCommand ?? (_signInCommand = new RelayCommand(SignIn,
-                           //o => true));
                            o => !String.IsNullOrWhiteSpace(_firstName) &&
                                 !String.IsNullOrWhiteSpace(_lastName) &&
-                                !String.IsNullOrWhiteSpace(_email) /*&&*/
-                /*IsDateValid(_dateOfBirth)*/));
+                                !String.IsNullOrWhiteSpace(_email)));
             }
         }
-
-
-        //private bool IsDateValid(DateTime date)
-        //{
-        //    var today = DateTime.Today;
-        //    var diffDateTime = today - date;
-        //    var diffYears = (today.Year - date.Year) - (today.DayOfYear >= date.DayOfYear ? 0 : 1);
-        //    return diffDateTime.Days >= 0 && diffYears <= 135;
-        //}
-
-
-
 
         public event PropertyChangedEventHandler PropertyChanged;
 

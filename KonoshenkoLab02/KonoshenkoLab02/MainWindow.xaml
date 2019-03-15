@@ -3,9 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:KonoshenkoLab02"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="550" Width="800" IsEnabled="{Binding IsControlEnabled , Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
     <Grid>
         <Grid.Background>
             <RadialGradientBrush GradientOrigin="0.5,0.5">
@@ -19,29 +19,30 @@
         <Grid Grid.Row="0" Grid.Column="0" Margin="30">
             <Grid>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"></RowDefinition>
+                    <RowDefinition Height="3*"></RowDefinition>
+                    <RowDefinition Height="4*"></RowDefinition>
+                    <RowDefinition Height="3*"></RowDefinition>
+                    <RowDefinition Height="4*"></RowDefinition>
+                    <RowDefinition Height="3*"></RowDefinition>
+                    <RowDefinition Height="4*"></RowDefinition>
+                    <RowDefinition Height="4*"></RowDefinition>
                     <RowDefinition Height="5*"></RowDefinition>
-                    <RowDefinition Height="7*"></RowDefinition>
-                    <RowDefinition Height="5*"></RowDefinition>
-                    <RowDefinition Height="7*"></RowDefinition>
-                    <RowDefinition Height="5*"></RowDefinition>
-                    <RowDefinition Height="7*"></RowDefinition>
-                    <RowDefinition Height="5*"></RowDefinition>
-                    <RowDefinition Height="7*"></RowDefinition>
-                    <RowDefinition Height="10*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Label Grid.Row="0" Grid.Column="0">First Name</Label>
-                <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-                <Label Grid.Row="2" Grid.Column="0">Last Name</Label>
-                <TextBox Grid.Row="3" Grid.Column="0" Text="{Binding LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-                <Label Grid.Row="4" Grid.Column="0">Email</Label>
-                <TextBox Grid.Row="5" Grid.Column="0" Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-                <Label Grid.Row="6" Grid.Column="0">Date of Birth</Label>
+                <Label Grid.Row="0" Grid.Column="0" FontSize="15">First Name</Label>
+                <TextBox Grid.Row="1" Grid.Column="0" FontSize="16" TextAlignment="Center" Margin="4" Text="{Binding FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <Label Grid.Row="2" Grid.Column="0" FontSize="15">Last Name</Label>
+                <TextBox Grid.Row="3" Grid.Column="0" FontSize="16" TextAlignment="Center" Margin="4" Text="{Binding LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <Label Grid.Row="4" Grid.Column="0" FontSize="15">Email</Label>
+                <TextBox Grid.Row="5" Grid.Column="0" FontSize="16" TextAlignment="Center" Margin="4" Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                <Label Grid.Row="6" Grid.Column="0" FontSize="15">Date of Birth</Label>
                 <DatePicker Grid.Row="7" Grid.Column="0" FirstDayOfWeek="Monday" SelectedDate="{Binding DateOfBirth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DatePicker>
                 <Button Grid.Row="8" Grid.Column="0" Command="{Binding RegisterCommand}">
                     <TextBlock FontSize="30">
                        <Bold>Proceed</Bold>
                     </TextBlock>
                 </Button>
+                <fa:ImageAwesome Grid.Row="4" Icon="Refresh" Width="40" Height="40" Spin="True" Visibility="{Binding LoaderVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></fa:ImageAwesome>
             </Grid>
         </Grid>
     </Grid>

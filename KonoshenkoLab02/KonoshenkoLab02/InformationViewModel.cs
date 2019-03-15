@@ -25,7 +25,6 @@ namespace KMA.ProgrammingInCSharp2019.KonoshenkoLab02
         }
 
 
-
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

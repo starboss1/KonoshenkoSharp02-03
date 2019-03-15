@@ -3,9 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:KMA.ProgrammingInCSharp2019.KonoshenkoLab02"
         mc:Ignorable="d"
-        Title="InformationWindow" Height="650" Width="800">
+        Title="InformationWindow" Height="550" Width="600">
     <Grid>
         <Grid.Background>
             <RadialGradientBrush GradientOrigin="0.5,0.5">
@@ -14,23 +13,23 @@
             </RadialGradientBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="10*"></RowDefinition>
-            <RowDefinition Height="10*"></RowDefinition>
-            <RowDefinition Height="10*"></RowDefinition>
-            <RowDefinition Height="10*"></RowDefinition>
-            <RowDefinition Height="10*"></RowDefinition>
-            <RowDefinition Height="10*"></RowDefinition>
-            <RowDefinition Height="10*"></RowDefinition>
-            <RowDefinition Height="10*"></RowDefinition>
-            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="7*"></RowDefinition>
+            <RowDefinition Height="7*"></RowDefinition>
+            <RowDefinition Height="7*"></RowDefinition>
+            <RowDefinition Height="7*"></RowDefinition>
+            <RowDefinition Height="7*"></RowDefinition>
+            <RowDefinition Height="7*"></RowDefinition>
+            <RowDefinition Height="7*"></RowDefinition>
+            <RowDefinition Height="7*"></RowDefinition>
+            <RowDefinition Height="7*"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="0" Margin="10" Text="{Binding FirstName, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
-        <TextBlock Grid.Row="1" Grid.Column="0" Margin="10" Text="{Binding LastName, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
-        <TextBlock Grid.Row="2" Grid.Column="0" Margin="10" Text="{Binding Email, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
-        <TextBlock Grid.Row="3" Grid.Column="0" Margin="10" Text="{Binding DateOfBirth, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
-        <TextBlock Grid.Row="4" Grid.Column="0" Margin="10" Text="{Binding IsAdult, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
-        <TextBlock Grid.Row="5" Grid.Column="0" Margin="10" Text="{Binding SunSign, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
-        <TextBlock Grid.Row="6" Grid.Column="0" Margin="10" Text="{Binding ChineseSign, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
-        <TextBlock Grid.Row="7" Grid.Column="0" Margin="10" Text="{Binding IsBirthday, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="0" Margin="10" FontSize="15" FontStyle="Italic" Text="{Binding FirstName, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="0" Margin="10" FontSize="15" FontStyle="Italic" Text="{Binding LastName, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="0" Margin="10" FontSize="15" FontStyle="Italic" Text="{Binding Email, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="0" Margin="10" FontSize="15" FontStyle="Italic" Text="{Binding DateOfBirth, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="0" Margin="10" FontSize="15" FontStyle="Italic" Text="{Binding IsAdult, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+        <TextBlock Grid.Row="5" Grid.Column="0" Margin="10" FontSize="15" FontStyle="Italic" Text="{Binding SunSign, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+        <TextBlock Grid.Row="6" Grid.Column="0" Margin="10" FontSize="15" FontStyle="Italic" Text="{Binding ChineseSign, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+        <TextBlock Grid.Row="7" Grid.Column="0" Margin="10" FontSize="15" FontStyle="Italic" Text="{Binding IsBirthday, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
         </Grid>
 </Window>
